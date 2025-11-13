@@ -77,7 +77,7 @@ def load_model(opt):
         bc_model, _ = make_model(params)
 
     # Load HJI model
-    model = modules.Constained_UR5ICNet(in_features=opt.num_links*2+1, out_features=1, type=activation, mode='mlp',
+    model = modules.Cup_UR5ICNet(in_features=opt.num_links*2+1, out_features=1, type=activation, mode='mlp',
                              final_layer_factor=1., hidden_features=512, num_hidden_layers=3,
                              bc_model=bc_model, 
                              max_joint_velocity=opt.max_joint_velocity, num_links=opt.num_links,
