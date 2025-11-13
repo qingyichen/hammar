@@ -11,8 +11,8 @@ import zonopyrobots as robots2
 sys.path.append( os.path.dirname( os.path.dirname( os.path.abspath(__file__) ) ) )
 import deepreach.modules as modules
 from UR5_datasets_and_training.training_utils import make_model
-from envs.DualArmPuzzle_env import DualArmPuzzleEnv, FullStepRecorder, RobotStepViz
-from agents.DualArmPuzzle_agent import DualArmPuzzleAgent
+from envs.DualArmDoorway_env import DualArmDoorwayEnv, FullStepRecorder, RobotStepViz
+from agents.DualArmDoorwar_agent import DualArmDoorwayAgent
 
 def parse_args():
     p = argparse.ArgumentParser()
@@ -183,7 +183,7 @@ if __name__ == '__main__':
         model2 = load_model(opt=opt, arm1=False)
     else:
         model2 = model1 
-    planner = DualArmPuzzleAgent(
+    planner = DualArmDoorwayAgent(
         max_joint_velocity=opt.max_joint_velocity,
         num_links=6, 
         val_func_model=model1,
@@ -197,7 +197,7 @@ if __name__ == '__main__':
         trials = [int(i) for i in opt.trials]
     for i_trial in tqdm(trials):
         planned_trajectoy = []
-        env = DualArmPuzzleEnv(robot=robot.urdf,
+        env = DualArmDoorwayEnv(robot=robot.urdf,
                             t_step=opt.step_time,
                             timestep_discretization=10,
                             step_type='direct',

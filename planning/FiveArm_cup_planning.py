@@ -11,8 +11,8 @@ import zonopyrobots as robots2
 sys.path.append( os.path.dirname( os.path.dirname( os.path.abspath(__file__) ) ) )
 import deepreach.modules as modules
 from UR5_datasets_and_training.training_utils import make_model
-from envs.FiveArm_env import FiveArmEnv, FullStepRecorder, RobotStepViz
-from agents.MultiArm_agent import MultiArmAgent
+from envs.FiveArmCup_env import FiveArmEnv, FullStepRecorder, RobotStepViz
+from agents.MultiArmCup_agent import MultiArmCupAgent
 
 def wrap_joint(configs):
     return (configs + torch.pi) % (2 * torch.pi) - torch.pi
@@ -209,7 +209,7 @@ if __name__ == '__main__':
     
     # planning preparations
     robot = load_robot(opt=opt)
-    planner = MultiArmAgent(
+    planner = MultiArmCupAgent(
         max_joint_velocity=opt.max_joint_velocity,
         num_links=6, 
         val_func_model=None if 'simple' in opt.planner_mode else load_model(opt=opt),
