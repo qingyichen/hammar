@@ -1,0 +1,16 @@
+bpy==4.3.0
+ConfigArgParse==1.7.1
+cvxpy==1.7.3
+cyipopt==1.6.1
+gym==0.26.2
+ikpy==3.4.2
+matplotlib==3.10.7
+numpy==1.26.4
+pyrender==0.1.45
+pytorch_kinematics==0.7.6
+scikit_learn==1.7.2
+scipy==1.16.3
+torch==2.9.1
+tqdm==4.67.1
+trimesh==4.9.0
+urchin==0.0.30
