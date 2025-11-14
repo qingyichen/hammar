@@ -28,7 +28,7 @@ def parse_args():
     p.add_argument('--use_symmetry', action='store_true', default=False, required=False, help='Whether the model considers symmetry during training.')
     p.add_argument('--seed', type=int, default=0, required=False, help='Seed for the simulation.')
 
-    p.add_argument('--logging_root', type=str, default='./hji_logs/logs_constrained_UR5', help='root for logging hji training')
+    p.add_argument('--logging_root', type=str, default='./hji_logs/logs_cup_UR5', help='root for logging hji training')
     p.add_argument('--experiment_name', type=str, default='experiment_mc_seed1')
     p.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu')
     
