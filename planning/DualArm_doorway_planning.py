@@ -12,7 +12,7 @@ sys.path.append( os.path.dirname( os.path.dirname( os.path.abspath(__file__) ) )
 import deepreach.modules as modules
 from UR5_datasets_and_training.training_utils import make_model
 from envs.DualArmDoorway_env import DualArmDoorwayEnv, FullStepRecorder, RobotStepViz
-from agents.DualArmDoorwar_agent import DualArmDoorwayAgent
+from agents.DualArmDoorway_agent import DualArmDoorwayAgent
 
 def parse_args():
     p = argparse.ArgumentParser()
