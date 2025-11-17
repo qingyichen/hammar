@@ -85,7 +85,7 @@ torch.manual_seed(opt.seed)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # load bc model
 bc_model_filepath = os.path.join(opt.bc_model_dir_path, 'puzzle_bc_models', opt.robot + '.pth')
-with open(os.path.join(opt.bc_model_dir_path, 'puzzle_bc_models', opt.robot + '_training_setting.json'), 'r') as f:
+with open(os.path.join(opt.bc_model_dir_path, 'doorway_bc_models', opt.robot + '_training_setting.json'), 'r') as f:
     json_config = json.load(f)
     params = copy.deepcopy(opt)
     params.__dict__.update(json_config)
