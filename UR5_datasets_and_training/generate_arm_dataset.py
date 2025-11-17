@@ -18,7 +18,7 @@ def collect_inter_arm_distance(num_sub_datasets=80, num_data=32000, manifold_onl
                             check_self_collision=True,
                             verbose_self_collision=True,
                             seed=i_dataset)
-        filename = f'seed{i_dataset}num_data{num_data}{"_manifold_only" if manifold_only else ""}.pkl'
+        filename = f'seed{i_dataset}num_data{num_data}{"_manifold" if manifold_only else ""}.pkl'
         subdataset_qpos = np.zeros((num_data, 12))
         subdataset_distances = np.zeros(num_data)
 
@@ -47,7 +47,7 @@ def collect_puzzle_arm_distance(num_sub_datasets=80, num_data=32000, manifold_on
                             check_self_collision=False,
                             verbose_self_collision=False,
                             seed=i_dataset)
-        filename = f'seed{i_dataset}num_data{num_data}{"_puzzle" if manifold_only else ""}.pkl'
+        filename = f'seed{i_dataset}num_data{num_data}{"_manifold" if manifold_only else ""}.pkl'
         subdataset_qpos = np.zeros((num_data, 12))
         subdataset_distances = np.zeros(num_data)
 
@@ -108,7 +108,7 @@ if __name__ == '__main__':
         check_self_collision = False
         num_data = 32000
         
-        dataset_dir = f"UR5_datasets_and_training/UR5_d0.6_mesh_distances_{'sc_' if check_self_collision else ''}dataset"
+        dataset_dir = f"UR5_datasets_and_training/UR5_cup_d0.6_mesh_distances_{'sc_' if check_self_collision else ''}dataset"
         if not os.path.exists(dataset_dir):
             os.makedirs(dataset_dir)
         collect_inter_arm_distance(manifold_only=True)
@@ -118,7 +118,7 @@ if __name__ == '__main__':
     puzzle_constraint = False
     if puzzle_constraint:
         robots2.DEBUG_VIZ = False
-        robot = robots2.ZonoArmRobot.load(os.path.join(os.getcwd(),'envs/arm_urdfs/ur5_puzzle/dual_ur5_no_gripper.urdf'), create_joint_occupancy=False)
+        robot = robots2.ZonoArmRobot.load(os.path.join(os.getcwd(),'envs/arm_urdfs/ur5_doorway/dual_ur5_no_gripper.urdf'), create_joint_occupancy=False)
 
         # self_collision_test()
         num_sub_datasets = 80
