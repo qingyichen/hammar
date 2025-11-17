@@ -6,6 +6,7 @@ We present HaMMAR, Hamilton–Jacobi with Manifold constraints for Multi-Agent R
 are both safe and task-feasible without requiring assumptions about other agents’ policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to high-dimensional multi-agent manipulation problems. 
 
 ## Dependency
+- Python 3.11 is used in this project.
 - Run `pip install -r requirements.txt` to collect all python dependencies.
 - [zonopy](https://github.com/roahmlab/zonopy) and [zonopy-robot](https://github.com/roahmlab/zonopy-robots) are required by the simulation environment. Please refer to their respective repositories following the hyperlinks for insllation instructions.
 ###
@@ -28,7 +29,15 @@ bash planning_scripts/run_five_UR5_cup_planning.sh         # Five UR5 Cup Planni
 bash planning_scripts/run_object_planning.sh               # Object Carrying Planning
 bash planning_scripts/run_doorway_planning.sh              # Doorway problem Planning
 ```
-For visulizations, the user may specify the `--video` flag in the bash scripts. The experiments will generate planning results as a JSON file under `planning_results/`.
+For visulizations, the user may specify the `--video` flag in the bash scripts. The experiments will generate planning results as a JSON file under `planning_results/`. To save planned trajectories, the user may substitute `--save_stats` with `--save_traj`.
+
+
+### BRS Comparison Expriments
+ - To run the BRS comparison experiment, 
+ ```
+ python deepreach/validation_scripts/compare_2D_value_func.py        # make BRS comparison plot, output file available under ./
+ python deepreach/validation_scripts/compute_2D_value_func_score.py  # collect comparision statistics such as accuracy
+ ```
 
 
 ### Training the HJR models
