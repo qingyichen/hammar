@@ -6,7 +6,6 @@ import math
 import pytorch_kinematics as pk
 import os, sys
 sys.path.append( os.path.dirname( os.path.dirname( os.path.abspath(__file__) ) ) )
-from deepreach.utils import line_segment_distances
 from torch.autograd import grad
 
 
