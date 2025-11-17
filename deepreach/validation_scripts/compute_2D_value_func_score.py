@@ -83,14 +83,14 @@ def val_fn_score(models, ground_truth_fn, times=None, threshold=0.01):
             numbers += [f"{100*(labels==gt_labels).mean():.1f}", f"{100*recall_score(gt_labels, labels):.1f}", f"{100*precision_score(gt_labels, labels):.1f}", f"{100*f1_score(gt_labels, labels):.1f}"] 
     
         # print numbers to latex table
-        string = ""
-        for i in range(len(numbers)):
-            string += numbers[i]
-            if i % 4 == 3:
-                string += "\\\\\midrule\n"
-            else:
-                string += " & "
-        print(string)  
+        # string = ""
+        # for i in range(len(numbers)):
+        #     string += numbers[i]
+        #     if i % 4 == 3:
+        #         string += "\\\\\midrule\n"
+        #     else:
+        #         string += " & "
+        # print(string)  
 
 if __name__ == '__main__':
     model_mc = load_model('./hji_logs/logs_circle_particle/experiment_mc_seed0')
