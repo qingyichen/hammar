@@ -14,3 +14,4 @@ torch==2.9.1
 tqdm==4.67.1
 trimesh==4.9.0
 urchin==0.0.30
+python-fcl==0.7.0.10
