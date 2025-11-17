@@ -52,7 +52,7 @@ For visulizations, the user may specify the `--video` flag in the bash scripts. 
  -  The simulation environment is adopted from [Sparrows](https://roahmlab.github.io/sparrows/). We thank the authors and maintainers for their amazing work.
 
  ## Citation
-If you find NeHMO useful, please consider citing using the following BibTex entry:
+If you find HaMMAR useful, please consider citing using the following BibTex entry:
 ```
 @misc{chen2025manifoldconstrainedhamiltonjacobireachabilitylearning,
       title={Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning}, 
