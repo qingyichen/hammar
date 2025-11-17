@@ -126,7 +126,7 @@ if __name__ == '__main__':
         num_data = 32000
 
 
-        dataset_dir = f"UR5_datasets_and_training/UR5_puzzle_mesh_distances_{'sc_' if check_self_collision else ''}dataset"
+        dataset_dir = f"UR5_datasets_and_training/UR5_doorway_mesh_distances_{'sc_' if check_self_collision else ''}dataset"
         if not os.path.exists(dataset_dir):
             os.makedirs(dataset_dir)
 

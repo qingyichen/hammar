@@ -3,7 +3,7 @@
     "robot": "UR5",
     "n_links": 12,
     "dataset_dir": "UR5_datasets_and_training",
-    "data": "UR5_puzzle_mesh_distances_dataset/mixed_dataset.pkl",
+    "data": "UR5_doorway_mesh_distances_dataset/mixed_dataset.pkl",
     "model": "MLP",
     "num_hidden_layers": 8,
     "hidden_size": 1024,
