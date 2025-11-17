@@ -73,7 +73,7 @@ def load_model(opt, arm1=True):
     # Load the boundary condition model first
     bc_model = None
     if opt.provide_initial_condition:
-        with open(os.path.join(opt.bc_model_dir_path, 'bc_models', opt.robot + '_training_setting.json'), 'r') as f:
+        with open(os.path.join(opt.bc_model_dir_path, 'doorway_bc_models', opt.robot + '_training_setting.json'), 'r') as f:
             json_config = json.load(f)
             params = copy.deepcopy(opt)
             params.__dict__.update(json_config)
