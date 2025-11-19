@@ -222,7 +222,7 @@ if __name__ == '__main__':
         trials = [int(i) for i in opt.trials]
     for i_trial in tqdm(trials):
         planned_trajectoy = []
-        env = FiveArmEnv(robot=robot.urdf,
+        env = FiveArmCupEnv(robot=robot.urdf,
                             t_step=opt.step_time,
                             timestep_discretization=10,
                             step_type='direct',
