@@ -99,7 +99,7 @@ class DualArmCupAgent():
             ).flatten()
         return torch.tensor(k_opt)
     
-    def predict_adversary_plans(self, self_state, adversary_agent_state, time=0., only_self_constrained=False):
+    def predict_adversary_plans(self, self_state, adversary_agent_state, time=0.1, only_self_constrained=False):
         coords = torch.zeros(1, self.state_dim * 2 + 1, device=self.device)
         coords[:,0] = time
         coords[:,1:1+self.state_dim] = self_state
