@@ -166,11 +166,11 @@ if __name__ == '__main__':
         import platform
         if platform.system() == "Linux":
             os.environ['PYOPENGL_PLATFORM'] = 'egl'
-        video_folder = f'planning_videos/{opt.robot}_puzzle/{planner_name}'
+        video_folder = f'planning_videos/{opt.robot}_doorway/{planner_name}'
         if not os.path.exists(video_folder):
             os.makedirs(video_folder)
     if blender:
-        blender_folder = f'planning_blenders/{opt.robot}_puzzle/{planner_name}'
+        blender_folder = f'planning_blenders/{opt.robot}_doorway/{planner_name}'
         if not os.path.exists(blender_folder):
             os.makedirs(blender_folder)
     

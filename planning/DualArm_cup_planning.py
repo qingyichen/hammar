@@ -163,11 +163,11 @@ if __name__ == '__main__':
         import platform
         if platform.system() == "Linux":
             os.environ['PYOPENGL_PLATFORM'] = 'egl'
-        video_folder = f'planning_videos/{opt.robot}/{planner_name}'
+        video_folder = f'planning_videos/{opt.robot}_cup/{planner_name}'
         if not os.path.exists(video_folder):
             os.makedirs(video_folder)
     if blender:
-        blender_folder = f'planning_blenders/{opt.robot}/{planner_name}'
+        blender_folder = f'planning_blenders/{opt.robot}_cup/{planner_name}'
         if not os.path.exists(blender_folder):
             os.makedirs(blender_folder)
     
@@ -275,9 +275,9 @@ if __name__ == '__main__':
             'initial_conditions': initial_conditions_and_num_steps_taken
         }
         if opt.save_traj:
-            stats_folder = f'planning_traj/{opt.robot}/safeT{opt.safe_time}_b{opt.buffer}'
+            stats_folder = f'planning_traj/{opt.robot}_cup/safeT{opt.safe_time}_b{opt.buffer}'
         else:
-            stats_folder = f'planning_results/{opt.robot}'
+            stats_folder = f'planning_results/{opt.robot}_cup'
         if not os.path.exists(stats_folder):
             os.makedirs(stats_folder)
         with open(os.path.join(stats_folder, planner_name + f'_{len(trials)}trials' + '.json'), 'w') as f:
