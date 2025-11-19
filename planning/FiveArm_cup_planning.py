@@ -11,7 +11,7 @@ import zonopyrobots as robots2
 sys.path.append( os.path.dirname( os.path.dirname( os.path.abspath(__file__) ) ) )
 import deepreach.modules as modules
 from UR5_datasets_and_training.training_utils import make_model
-from envs.FiveArmCup_env import FiveArmEnv, FullStepRecorder, RobotStepViz
+from envs.FiveArmCup_env import FiveArmCupEnv, FullStepRecorder, RobotStepViz
 from agents.MultiArmCup_agent import MultiArmCupAgent
 
 def wrap_joint(configs):
