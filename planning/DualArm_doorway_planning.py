@@ -59,7 +59,7 @@ def parse_args():
 def load_robot(opt):
     robots2.DEBUG_VIZ = False
     robot_name = opt.robot.lower()
-    robot = robots2.ZonoArmRobot.load(os.path.join(os.getcwd(), f'envs/arm_urdfs/{robot_name}_puzzle/dual_{robot_name}_gripper.urdf'), create_joint_occupancy=False)
+    robot = robots2.ZonoArmRobot.load(os.path.join(os.getcwd(), f'envs/arm_urdfs/{robot_name}_doorway/dual_{robot_name}_gripper.urdf'), create_joint_occupancy=False)
     return robot
     
 def load_model(opt, arm1=True):
@@ -80,7 +80,7 @@ def load_model(opt, arm1=True):
         bc_model, _ = make_model(params)
 
     # Load HJI model
-    model = modules.Puzzle_UR5ICNet(in_features=opt.num_links*2+1, out_features=1, type=activation, mode='mlp',
+    model = modules.Doorway_UR5ICNet(in_features=opt.num_links*2+1, out_features=1, type=activation, mode='mlp',
                              final_layer_factor=1., hidden_features=512, num_hidden_layers=3,
                              bc_model=bc_model, 
                              max_joint_velocity=opt.max_joint_velocity, num_links=opt.num_links,
@@ -277,8 +277,6 @@ if __name__ == '__main__':
                 'mean': np.mean(num_steps_for_success_trials),
                 'std': np.std(num_steps_for_success_trials)
             },
-            'num_success_optimizations': planner.num_success_solutions,
-            'num_failed_optimizations': planner.num_failed_solutions,
             'success_trials': success_trials,
             'collision_trials': collision_trials,
             'inter_arm_collision_trials': inter_arm_collision_trials,
@@ -287,9 +285,9 @@ if __name__ == '__main__':
             'initial_conditions': initial_conditions_and_num_steps_taken
         }
         if opt.save_traj:
-            stats_folder = f'planning_traj/{opt.robot}_puzzle/safeT{opt.safe_time}_b{opt.buffer}'
+            stats_folder = f'planning_traj/{opt.robot}_doorway/safeT{opt.safe_time}_b{opt.buffer}'
         else:
-            stats_folder = f'planning_results/{opt.robot}_puzzle'
+            stats_folder = f'planning_results/{opt.robot}_doorway'
         if not os.path.exists(stats_folder):
             os.makedirs(stats_folder)
         with open(os.path.join(stats_folder, planner_name + f'_{len(trials)}trials' + '.json'), 'w') as f:

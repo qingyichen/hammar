@@ -205,9 +205,9 @@ class DualArmDoorwayEnv:
         
         # FK and IK related
         torch.manual_seed(seed=seed)
-        robot1_urdf_path = 'envs/arm_urdfs/ur5_puzzle/ur5_1.urdf'
+        robot1_urdf_path = 'envs/arm_urdfs/ur5_doorway/ur5_1.urdf'
         self.chain1 = pk.build_serial_chain_from_urdf(open(robot1_urdf_path).read(), f"ee_link")
-        robot2_urdf_path = 'envs/arm_urdfs/ur5_puzzle/ur5_2.urdf'
+        robot2_urdf_path = 'envs/arm_urdfs/ur5_doorway/ur5_2.urdf'
         self.chain2 = pk.build_serial_chain_from_urdf(open(robot2_urdf_path).read(), f"ee_link")
         
         self.ik1 = ikpy.chain.Chain.from_urdf_file(robot1_urdf_path, active_links_mask=([False] + [True]*6 + [False]))
@@ -328,7 +328,7 @@ class DualArmDoorwayEnv:
             bpy.ops.wm.read_factory_settings(use_empty=True)
             
         # Include the puzzle object
-        puzzle_obj = trimesh.load_mesh('envs/arm_urdfs/ur5_puzzle/puzzle.stl')
+        puzzle_obj = trimesh.load_mesh('envs/arm_urdfs/ur5_doorway/puzzle.stl')
         pose = np.eye(4)
         pose[0:3,3] = 0.
         self.puzzle_mesh = (puzzle_obj, pose)

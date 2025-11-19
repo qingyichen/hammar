@@ -28,9 +28,9 @@ class DualArmDoorwayAgent():
         self.state_dim = num_links
         self.verbose = verbose
         
-        robot1_urdf_path = 'envs/arm_urdfs/ur5_puzzle/ur5_1.urdf'
+        robot1_urdf_path = 'envs/arm_urdfs/ur5_doorway/ur5_1.urdf'
         self.chain1 = pk.build_serial_chain_from_urdf(open(robot1_urdf_path).read(), f"ee_link").to(device=self.device)
-        robot2_urdf_path = 'envs/arm_urdfs/ur5_puzzle/ur5_2.urdf'
+        robot2_urdf_path = 'envs/arm_urdfs/ur5_doorway/ur5_2.urdf'
         self.chain2 = pk.build_serial_chain_from_urdf(open(robot2_urdf_path).read(), f"ee_link").to(device=self.device)
         self.num_success_solutions = 0
         self.num_failed_solutions = 0
