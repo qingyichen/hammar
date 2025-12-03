@@ -3,13 +3,13 @@
 
 <table>
     <td align="center">
-      <img src="media/object_demo.gif" width="360">
+      <img src="media/object_demo.gif" width="300">
     </td>
     <td align="center">
-      <img src="media/cup_demo.gif" width="360">
+      <img src="media/cup_demo.gif" width="300">
     </td>
     <td align="center">
-      <img src="media/doorway_demo.gif" width="360">
+      <img src="media/doorway_demo.gif" width="300">
     </td>
   </tr>
 </table>
