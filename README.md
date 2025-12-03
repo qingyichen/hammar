@@ -1,6 +1,19 @@
 # Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning
 [Paper](https://www.arxiv.org/abs/2511.03591) | [Video Demo](https://youtu.be/RYcEHMnPTH8)
 
+<table>
+    <td align="center">
+      <img src="media/object_demo.gif" width="360">
+    </td>
+    <td align="center">
+      <img src="media/cup_demo.gif" width="360">
+    </td>
+    <td align="center">
+      <img src="media/doorway_demo.gif" width="360">
+    </td>
+  </tr>
+</table>
+
 ## Introduction
 We present HaMMAR, Hamilton–Jacobi with Manifold constraints for Multi-Agent Reachability, a framework that learns manifold-constrained HJR for decentralized multi-agent motion planning. Our method solves HJR problems under manifold constraints to capture task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner. This enables robots to generate motion plans that
 are both safe and task-feasible without requiring assumptions about other agents’ policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to high-dimensional multi-agent manipulation problems. 
