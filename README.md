@@ -1,5 +1,5 @@
 # Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning
-[Paper](https://www.arxiv.org/abs/2511.03591) | [Video Demo](https://youtu.be/RYcEHMnPTH8)
+[Paper](https://ieeexplore.ieee.org/document/11697252) | [arXiv](https://arxiv.org/abs/2511.03591) | [Video Demo](https://youtu.be/RYcEHMnPTH8)
 
 <table>
     <td align="center">
@@ -73,16 +73,18 @@ For visulizations, the user may specify the `--video` flag in the bash scripts. 
  - A majority of the code for HJR learning is adopted from [DeepReach](https://github.com/smlbansal/deepreach). We thank the authors and maintainers for their amazing work.
  -  The simulation environment is adopted from [Sparrows](https://roahmlab.github.io/sparrows/). We thank the authors and maintainers for their amazing work.
 
- ## Citation
+## Citation
 If you find HaMMAR useful, please consider citing using the following BibTex entry:
 ```
-@misc{chen2025manifoldconstrainedhamiltonjacobireachabilitylearning,
-      title={Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning}, 
-      author={Qingyi Chen and Ruiqi Ni and Jun Kim and Ahmed H. Qureshi},
-      year={2025},
-      eprint={2511.03591},
-      archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2511.03591}, 
+@inproceedings{chen2026hammar,
+      title={Manifold-constrained {Hamilton-Jacobi} Reachability Learning for Decentralized Multi-Agent Motion Planning},
+      author={Chen, Qingyi and Ni, Ruiqi and Kim, Junyoung and Qureshi, Ahmed H.},
+      booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)},
+      pages={13606--13613},
+      year={2026},
+      address={Vienna, Austria},
+      month=jun,
+      publisher={IEEE},
+      doi={10.1109/ICRA57385.2026.11697252},
 }
 ```
